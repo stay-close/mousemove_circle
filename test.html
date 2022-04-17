@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>
+        .circle {
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            border: 2px solid green;
+            position: absolute;
+            /* animation: animate 1s infinite ease; */
+        }
+        /* @keyframes animate {
+            0% {
+                filter: hue-rotate(0deg)
+            }
+            100% {
+                filter: hue-rotate(360deg)
+            }
+        } */
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+    <script>
+        document.onmousemove = createCircle;
+
+        function createCircle(event) {
+            var circle = document.createElement('div');
+            circle.setAttribute('class', 'circle');
+            document.body.appendChild(circle);
+            circle.style.left = event.clientX + 'px';
+            circle.style.top = event.clientY + 'px';
+
+            circle.style.transition = 'all 1s linear 0s';
+
+            circle.style.left = circle.offsetLeft - 20 + 'px';
+            circle.style.top = circle.offsetTop - 20 + 'px';
+            console.log(circle.offsetLeft, circle.offsetTop)
+            circle.style.width = '50px';
+            circle.style.height = '50px';
+            circle.style.borderWidth = '5px';
+            circle.style.opacity = '0';
+
+
+        }
+    </script>
+</body>
+
+</html>
